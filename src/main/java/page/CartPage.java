@@ -28,6 +28,9 @@ public class CartPage {
     @FindBy(css = "#form > div > p.checkbox > label")
     private WebElement labelAgreement;
 
+    @FindBy(className = "bankwire")
+    private WebElement buttonPayByBankWire;
+
     public CartPage(WebDriver webDriver) {
         this.webDriver = webDriver;
         PageFactory.initElements(webDriver, this);
@@ -66,6 +69,11 @@ public class CartPage {
         this.webDriverWait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(String.valueOf(labelAgreement))));
         labelAgreement.click();
         buttonConfirmShipping.click();
+    }
+
+    public void clickPayByBankWire() {
+        this.webDriverWait.until(ExpectedConditions.elementToBeClickable(By.className(String.valueOf(buttonPayByBankWire))));
+        buttonPayByBankWire.click();
     }
 
     public String getTotalPaymentInPaymentStatus() {

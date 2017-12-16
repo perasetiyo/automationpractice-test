@@ -47,6 +47,7 @@ public class PayByBankWire {
         cartPage.clickButtonProccedCheckout();
         cartPage.clickButtonConfirmAddress();
         cartPage.clickButtonConfirmShipping();
+        cartPage.clickPayByBankWire();
         String totalPaymentInPaymentStatus = cartPage.getTotalPaymentInPaymentStatus();
         Assert.assertEquals(totalPayment, totalPaymentInPaymentStatus);
     }
